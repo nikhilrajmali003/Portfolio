@@ -6,44 +6,38 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import java from "../../public/java.png";
-import mongoDB from "../../public/mongodb.jpg";
-import express from "../../public/express.png";
-import reactjs from "../../public/reactjs.png";
-import nodejs from "../../public/node.png";
-
 const cardItem = [
   {
     id: 1,
-    logo: mongoDB,
+    logo: "/mongodb.jpg",
     name: "MongoDB",
     description:
       "A NoSQL database designed for scalability and high-performance applications.",
   },
   {
     id: 2,
-    logo: express,
+    logo: "/express.png",
     name: "Express.js",
     description:
       "A minimal and flexible Node.js web application framework for building APIs.",
   },
   {
     id: 3,
-    logo: reactjs,
+    logo: "/reactjs.png",
     name: "ReactJS",
     description:
       "A powerful JavaScript library for building interactive and scalable user interfaces.",
   },
   {
     id: 4,
-    logo: nodejs,
+    logo: "/node.png",
     name: "NodeJS",
     description:
       "A runtime environment that enables JavaScript to be used for backend development.",
   },
   {
     id: 5,
-    logo: java,
+    logo: "/java.png",
     name: "Java",
     description:
       "A versatile, object-oriented programming language used for web and enterprise applications.",
@@ -55,9 +49,9 @@ function PortFolio() {
 
   useEffect(() => {
     const checkDevice = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      const isMobileDevice = /android|iphone|ipad|ipod|windows phone/i.test(userAgent);
-      setIsMobile(isMobileDevice);
+      const userAgent =
+        navigator.userAgent || navigator.vendor || window.opera;
+      setIsMobile(/android|iphone|ipad|ipod|windows phone/i.test(userAgent));
     };
 
     checkDevice();
@@ -68,7 +62,7 @@ function PortFolio() {
 
   return (
     <div
-      name="Portfolio"
+      id="portfolio-section"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10 py-10 bg-gradient-to-br from-black to-[#0a192f] text-white"
     >
       <div className="text-center">
@@ -79,12 +73,11 @@ function PortFolio() {
       </div>
 
       {isMobile ? (
-        // Show Swiper Slider for Mobile Users
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
-          loop={true}
+          loop
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 2500 }}
@@ -107,7 +100,6 @@ function PortFolio() {
           ))}
         </Swiper>
       ) : (
-        // Show Grid Layout for Desktop Users
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
           {cardItem.map(({ id, logo, name, description }) => (
             <div

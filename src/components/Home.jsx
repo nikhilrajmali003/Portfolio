@@ -20,7 +20,9 @@ function Home() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Left Section */}
           <div className="md:w-1/2 mt-12 md:mt-20 space-y-4 order-2 md:order-1 text-center md:text-left">
-            <span className="text-lg text-[#38BDF8]">👋 Welcome To My Feed</span>
+            <span className="text-lg text-[#38BDF8]">
+              👋 Welcome To My Feed
+            </span>
 
             {/* Animated Developer Text */}
             <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start text-2xl sm:text-3xl md:text-4xl font-semibold">
@@ -37,9 +39,9 @@ function Home() {
             <p className="text-sm sm:text-md md:text-lg text-gray-300 mt-4 leading-relaxed">
               I'm{" "}
               <span className="font-bold text-[#38BDF8]">Nikhil Raj Mali</span>,
-              a third-year Computer Science student at Techno India NJR. 
-              Passionate about Java, Web Technologies, and building scalable applications. 
-              Always eager to learn and innovate! 💡✨
+              a final year Computer Science student at Techno India NJR.
+              Passionate about Java, Web Technologies, and building scalable
+              applications. Always eager to learn and innovate! 💡✨
             </p>
 
             {/* Social Media & Tech Stack */}
